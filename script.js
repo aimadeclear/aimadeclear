@@ -11,28 +11,6 @@ if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
 }
 
-const updateGiscusTheme = (theme) => {
-  const frame = document.querySelector('iframe.giscus-frame');
-  if (!frame) return;
-
-  frame.contentWindow.postMessage({
-    giscus: {
-      setConfig: {
-        theme: theme === 'dark' ? 'dark' : 'light'
-      }
-    }
-  }, 'https://giscus.app');
-};
-
-const getActiveTheme = () =>
-  document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-
-const giscusObserver = new MutationObserver(() => updateGiscusTheme(getActiveTheme()));
-const commentsPanel = document.querySelector('.comments-panel');
-if (commentsPanel) {
-  giscusObserver.observe(commentsPanel, { childList: true, subtree: true });
-}
-
 themeToggle.addEventListener('click', () => {
   let theme = document.documentElement.getAttribute('data-theme');
   if (theme === 'dark') {
@@ -43,5 +21,4 @@ themeToggle.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
   localStorage.setItem('theme', theme);
-  updateGiscusTheme(theme);
 });
