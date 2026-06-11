@@ -32,7 +32,7 @@
       <li><a href="#identity">소개</a></li>
       <li><a href="#proof">검증</a></li>
       <li><a href="#topics">강의 주제</a></li>
-      <li><a href="#contact">강의 문의</a></li>
+      <li><a href="#contact">제휴 문의</a></li>
     </ul>
   </div>
   </div>
@@ -52,7 +52,7 @@
     </p>
     <p class="hero-en">하이브온(HiveOn) 대표 · AI 강사 · 비즈니스 컨설턴트</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#contact">강의 문의하기</a>
+      <a class="btn btn-primary" href="#contact">제휴 문의하기</a>
       <a class="btn btn-ghost" href="#proof">검증된 결과 보기</a>
     </div>
   </div>
@@ -234,13 +234,52 @@
     <div class="sec-label">Contact</div>
     <h2>막연함을 선명함으로 바꿀 준비가 되셨다면</h2>
     <p class="lead">
-      기관·기업 맞춤 강의, 워크숍, 자문을 제안받습니다.
-      청중의 직무와 사전 이해 수준을 알려주시면 가장 선명한 커리큘럼으로 답하겠습니다.
+      기관·기업 맞춤 강의, 워크숍, 자문, 콘텐츠 협업을 제안받습니다.
+      필요한 배경을 남겨주시면 확인 후 답변드리겠습니다.
     </p>
-    <div class="contact-row">
-      <a class="btn btn-primary" href="mailto:harry@mentorr.kr">harry@mentorr.kr</a>
-      <a class="btn btn-ghost" href="#thesis">강의 철학 다시 보기</a>
-    </div>
+    <form class="contact-form" action="https://formspree.io/f/mdavllwz" method="POST">
+      <input type="hidden" name="_subject" value="AI 선명가 이태준 제휴 문의">
+      <label class="hidden-field">
+        확인용
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </label>
+      <div class="form-grid">
+        <label>
+          이름
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          소속 / 회사명
+          <input type="text" name="organization" autocomplete="organization">
+        </label>
+        <label>
+          이메일
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          연락처
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+      </div>
+      <label>
+        문의 유형
+        <select name="inquiry_type" required>
+          <option value="">선택해 주세요</option>
+          <option value="강의 / 워크숍">강의 / 워크숍</option>
+          <option value="자문 / 컨설팅">자문 / 컨설팅</option>
+          <option value="콘텐츠 / 미디어 협업">콘텐츠 / 미디어 협업</option>
+          <option value="기타 제휴">기타 제휴</option>
+        </select>
+      </label>
+      <label>
+        문의 내용
+        <textarea name="message" rows="6" placeholder="일정, 대상, 목적, 예산 범위 등 공유 가능한 내용을 적어주세요." required></textarea>
+      </label>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">문의 보내기</button>
+        <a class="btn btn-ghost" href="mailto:harry@mentorr.kr">이메일로 문의</a>
+      </div>
+    </form>
   </div>
 </section>
 
