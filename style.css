@@ -1,0 +1,192 @@
+:root{
+  --ink:#0e1116;
+  --paper:#f7f6f2;
+  --line:#dcd9d2;
+  --accent:#1e5eff;       /* 선명 블루 */
+  --accent-soft:#e8efff;
+  --muted:#5c6470;
+  --maxw:1040px;
+  }
+  [data-theme="dark"] {
+  --ink:#f7f6f2;
+  --paper:#0e1116;
+  --line:#2a2d32;
+  --accent:#4d85ff;
+  --accent-soft:rgba(30,94,255,0.1);
+  --muted:#a0a7b1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;
+  background:var(--paper);color:var(--ink);
+  line-height:1.7;-webkit-font-smoothing:antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- nav ---------- */
+  nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(var(--nav-bg-rgb, 247,246,242),.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  }
+  [data-theme="dark"] nav {
+  --nav-bg-rgb: 14,17,22;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .nav-right{display:flex;align-items:center;gap:20px}
+  #theme-toggle{
+  background:none;border:none;cursor:pointer;color:var(--ink);
+  padding:8px;border-radius:50%;transition:background 0.2s;
+  display:flex;align-items:center;justify-content:center;
+  }
+  #theme-toggle:hover{background:var(--accent-soft)}
+  #theme-toggle .sun-icon{display:none}
+  [data-theme="dark"] #theme-toggle .sun-icon{display:block}
+  [data-theme="dark"] #theme-toggle .moon-icon{display:none}
+
+  .logo{font-weight:800;letter-spacing:-.02em;font-size:1.02rem}
+.logo em{font-style:normal;color:var(--accent)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;transition:color .2s}
+nav a:hover{color:var(--ink)}
+@media(max-width:680px){
+  nav ul{display:none}
+  .nav-right{gap:10px}
+}
+
+/* ---------- hero : 막연함 → 선명함 ---------- */
+header{padding:110px 0 90px;border-bottom:1px solid var(--line);overflow:hidden}
+.kicker{
+  display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.14em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:22px;
+}
+h1{
+  font-size:clamp(2.4rem,6.4vw,4.4rem);font-weight:800;
+  letter-spacing:-.035em;line-height:1.18;
+}
+h1 .vague{
+  color:var(--muted);
+  filter:blur(5px);opacity:.55;
+  animation:sharpen 2.4s cubic-bezier(.2,.7,.2,1) .5s forwards;
+  display:inline-block;
+}
+h1 .clear{color:var(--accent)}
+@keyframes sharpen{to{filter:blur(0);opacity:1;color:var(--ink)}}
+.hero-sub{
+  margin-top:28px;max-width:620px;font-size:1.08rem;color:var(--muted);
+}
+.hero-sub strong{color:var(--ink);font-weight:700}
+.hero-en{
+  margin-top:14px;font-size:.92rem;color:var(--muted);letter-spacing:.02em;font-weight:500;
+}
+.hero-cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:13px 26px;border-radius:8px;font-weight:700;font-size:.94rem;
+  text-decoration:none;transition:transform .15s,box-shadow .15s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(30,94,255,.25)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- section base ---------- */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.sec-label{
+  font-size:.8rem;font-weight:700;letter-spacing:.14em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:14px;
+}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.35;margin-bottom:18px}
+.lead{max-width:640px;color:var(--muted);font-size:1.02rem}
+.lead strong{color:var(--ink)}
+
+/* ---------- 명제 ---------- */
+.thesis{
+  margin-top:44px;background:var(--ink);color:var(--paper);
+  border-radius:14px;padding:46px 44px;
+}
+.thesis p.big{font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:700;letter-spacing:-.02em;line-height:1.6}
+.thesis p.big em{font-style:normal;color:#7da3ff}
+.thesis .arrow-row{
+  display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap;
+}
+.state{
+  padding:12px 22px;border-radius:999px;font-weight:700;font-size:.95rem;white-space:nowrap;
+}
+.state.fog{border:1.5px dashed rgba(247,246,242,.45);color:rgba(247,246,242,.65)}
+.state.sharp{background:var(--accent);color:#fff}
+.arrow{font-size:1.3rem;color:rgba(247,246,242,.5)}
+@media(max-width:560px){.thesis{padding:34px 26px}}
+
+/* ---------- 정체성 3 ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px 26px;
+  transition:transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(14,17,22,.08)}
+.card .num{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.1em;margin-bottom:12px}
+.card h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.card p{font-size:.92rem;color:var(--muted)}
+
+/* ---------- 숫자 ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{
+  background:var(--accent-soft);border-radius:12px;padding:28px 22px;text-align:left;
+}
+.stat .val{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.stat .key{font-size:.88rem;font-weight:600;color:var(--ink);margin-top:6px}
+.stat .src{font-size:.76rem;color:var(--muted);margin-top:4px}
+.stats-note{margin-top:16px;font-size:.82rem;color:var(--muted)}
+
+/* ---------- 트랙 레코드 ---------- */
+.orgs{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px}
+.org{
+  padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;
+  font-size:.88rem;font-weight:600;color:var(--ink);
+}
+.record-line{margin-top:26px;font-size:.95rem;color:var(--muted)}
+.record-line strong{color:var(--ink)}
+
+/* ---------- 강의 주제 ---------- */
+.topics{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:680px){.topics{grid-template-columns:1fr}}
+.topic{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:10px;padding:22px 24px;
+}
+.topic h3{font-size:1rem;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+.topic p{font-size:.88rem;color:var(--muted)}
+
+/* ---------- 오리진 明 ---------- */
+.origin{display:grid;grid-template-columns:160px 1fr;gap:44px;align-items:center;margin-top:44px}
+@media(max-width:680px){.origin{grid-template-columns:1fr;gap:24px}}
+.hanja{
+  font-size:clamp(4.5rem,10vw,7rem);font-weight:800;color:var(--accent);
+  text-align:center;line-height:1;
+}
+.hanja small{display:block;font-size:.85rem;color:var(--muted);font-weight:600;margin-top:12px;letter-spacing:.06em}
+blockquote{
+  font-size:1.05rem;line-height:1.85;color:var(--ink);
+  border-left:3px solid var(--accent);padding-left:24px;font-weight:500;
+}
+blockquote em{font-style:normal;color:var(--accent);font-weight:700}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--paper);border-bottom:none}
+.contact .sec-label{color:#7da3ff}
+.contact h2{color:var(--paper)}
+.contact .lead{color:rgba(247,246,242,.7)}
+.contact-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.contact .btn-ghost{border-color:rgba(247,246,242,.6);color:var(--paper)}
+.contact .btn-ghost:hover{background:var(--paper);color:var(--ink)}
+
+footer{background:var(--ink);color:rgba(247,246,242,.45);padding:34px 0;font-size:.82rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
