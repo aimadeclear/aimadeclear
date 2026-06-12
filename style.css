@@ -229,7 +229,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 .signal-mid{height:72px;opacity:.58;filter:blur(.7px)}
 .signal-clear{height:104px;opacity:1}
 [data-theme="dark"] .logo-mark{
-  background:var(--paper);color:#0e1116;box-shadow:0 8px 18px rgba(0,0,0,.22);
+  background:var(--paper-fixed);color:var(--ink-fixed);box-shadow:0 8px 18px rgba(0,0,0,.22);
 }
 blockquote{
   font-size:1.05rem;line-height:1.85;color:var(--ink);
