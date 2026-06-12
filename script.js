@@ -4,27 +4,6 @@ const obs=new IntersectionObserver(es=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// 테마 토글 (초기 적용은 <head> 인라인 스크립트가 처리)
-const themeToggle = document.getElementById('theme-toggle');
-
-function syncThemeState() {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  themeToggle.setAttribute('aria-pressed', String(isDark));
-}
-syncThemeState();
-
-themeToggle.addEventListener('click', () => {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  if (isDark) {
-    document.documentElement.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  }
-  syncThemeState();
-});
-
 // 모바일 내비게이션 토글
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');

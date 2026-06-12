@@ -1,23 +1,14 @@
 :root{
-  --ink:#0e1116;
-  --paper:#f7f6f2;
-  --line:#dcd9d2;
-  --accent:#1e5eff;       /* 선명 블루 */
-  --accent-soft:#e8efff;
-  --muted:#5c6470;
-  --surface:#fff;
-  --ink-fixed:#0e1116;     /* 테마와 무관하게 항상 어두운 면 */
-  --paper-fixed:#f7f6f2;   /* 위 면 위의 밝은 글자 */
-  --maxw:1040px;
-  }
-  [data-theme="dark"] {
   --ink:#f7f6f2;
   --paper:#0e1116;
   --line:#2a2d32;
-  --accent:#4d85ff;
+  --accent:#4d85ff;       /* 선명 블루 */
   --accent-soft:rgba(30,94,255,0.1);
   --muted:#a0a7b1;
   --surface:#171a20;
+  --ink-fixed:#0e1116;     /* 테마와 무관하게 항상 어두운 면 */
+  --paper-fixed:#f7f6f2;   /* 위 면 위의 밝은 글자 */
+  --maxw:1040px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -25,40 +16,27 @@
   font-family:"Pretendard Variable",Pretendard,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;
   background:var(--paper);color:var(--ink);
   line-height:1.7;-webkit-font-smoothing:antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ---------- nav ---------- */
   nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(var(--nav-bg-rgb, 247,246,242),.88);backdrop-filter:blur(12px);
+  background:rgba(14,17,22,.88);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
-  }
-  [data-theme="dark"] nav {
-  --nav-bg-rgb: 14,17,22;
   }
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   .nav-right{display:flex;align-items:center;gap:20px}
-  #theme-toggle{
-  background:none;border:none;cursor:pointer;color:var(--ink);
-  padding:8px;border-radius:50%;transition:background 0.2s;
-  display:flex;align-items:center;justify-content:center;
-  }
-  #theme-toggle:hover{background:var(--accent-soft)}
-  #theme-toggle .sun-icon{display:none}
-  [data-theme="dark"] #theme-toggle .sun-icon{display:block}
-  [data-theme="dark"] #theme-toggle .moon-icon{display:none}
 
   .logo{
   display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;
   min-width:0;
 }
 .logo-mark{
-  position:relative;width:42px;height:34px;border-radius:8px;background:var(--ink);color:var(--paper);
+  position:relative;width:42px;height:34px;border-radius:8px;background:var(--paper-fixed);color:var(--ink-fixed);
   display:flex;align-items:center;justify-content:center;gap:1px;
   font-weight:800;font-size:.88rem;letter-spacing:.02em;line-height:1;
-  box-shadow:0 8px 18px rgba(14,17,22,.16);
+  box-shadow:0 8px 18px rgba(0,0,0,.22);
   overflow:hidden;
 }
 .logo-mark::before{
@@ -92,7 +70,7 @@ nav ul a:hover{color:var(--ink)}
   nav ul{
     display:none;position:absolute;top:60px;left:0;right:0;
     flex-direction:column;gap:0;
-    background:rgba(var(--nav-bg-rgb, 247,246,242),.98);backdrop-filter:blur(12px);
+    background:rgba(14,17,22,.98);backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);padding:8px 24px 16px;
   }
   nav ul.open{display:flex}
@@ -148,6 +126,7 @@ header .btn-ghost{border-color:rgba(247,249,255,.78);color:#fff}
 header .btn-ghost:hover{background:#fff;color:#0e1116}
 @media(max-width:680px){
   header{
+    padding:86px 0 72px;
     background:
       linear-gradient(rgba(7,12,35,.88),rgba(7,12,35,.78)),
       url("/assets/lecture-1-hero.webp") 62% center/cover no-repeat;
@@ -321,9 +300,6 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 .signal-soft{height:42px;opacity:.28;filter:blur(2px)}
 .signal-mid{height:72px;opacity:.58;filter:blur(.7px)}
 .signal-clear{height:104px;opacity:1}
-[data-theme="dark"] .logo-mark{
-  background:var(--paper-fixed);color:var(--ink-fixed);box-shadow:0 8px 18px rgba(0,0,0,.22);
-}
 blockquote{
   font-size:1.05rem;line-height:1.85;color:var(--ink);
   border-left:3px solid var(--accent);padding-left:24px;font-weight:500;
@@ -376,6 +352,20 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
   .form-grid{grid-template-columns:1fr}
   .contact-form{gap:16px}
   .form-actions .btn{width:100%;text-align:center}
+}
+
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  section{padding:64px 0}
+  .hero-cta .btn{width:100%;text-align:center}
+  .identity-head{padding:28px 20px;border-radius:12px}
+  .profile-frame{min-height:330px;border-radius:16px}
+  .profile-photo-crop{inset:46px 10px 0}
+  .identity-mini-stats{display:grid;grid-template-columns:1fr;gap:8px}
+  .identity-mini-stats div+div::before{display:none}
+  .stats{grid-template-columns:1fr;gap:12px}
+  .stat{padding:24px 20px}
+  .topic,.card,.proof-quote{padding:22px 20px}
 }
 
 footer{background:var(--ink-fixed);color:rgba(247,246,242,.45);padding:34px 0;font-size:.82rem}
