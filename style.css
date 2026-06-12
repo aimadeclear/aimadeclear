@@ -211,7 +211,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 .identity-profile-link:hover{text-decoration:underline}
 .profile-frame{
   position:relative;height:100%;min-height:340px;overflow:hidden;
-  border-radius:20px;background:radial-gradient(ellipse at 50% 35%, #1a2a6b 0%, #0d1430 65%);
+  border-radius:20px;background:radial-gradient(ellipse at 50% 30%, #2b3247 0%, #161a28 70%);
 }
 .profile-panel-label{
   position:absolute;left:22px;top:20px;z-index:2;color:#1e5eff;
@@ -222,7 +222,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
   display:flex;align-items:flex-end;justify-content:center;
 }
 .profile-frame img{
-  display:block;width:auto;height:92%;object-fit:contain;object-position:bottom center;
+  display:block;width:auto;height:112%;object-fit:contain;object-position:bottom center;
 }
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;align-items:stretch}
 @media(max-width:760px){
