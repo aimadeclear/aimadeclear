@@ -3,11 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* 렌더 전에 테마를 적용해 다크모드 깜빡임(FOUC) 방지 */
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    if(!t){ t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    if(t === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
+  }catch(e){}
+})();
+</script>
 <title>AI 선명가 이태준 — 막연한 AI를 선명하게</title>
 <meta name="description" content="AI 선명가 이태준 | 막연한 AI를 선명하게. 하이브온 대표, AI 강사, 비즈니스 컨설턴트. Taejun Lee — AI, Made Clear">
+<link rel="canonical" href="https://aimadeclear.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="AI 선명가 이태준">
+<meta property="og:title" content="AI 선명가 이태준 — 막연한 AI를 선명하게">
+<meta property="og:description" content="하이브온 대표 · AI 강사 · 비즈니스 컨설턴트. 막연한 AI를 업무의 판단 기준으로 바꾸는 강의.">
+<meta property="og:url" content="https://aimadeclear.com/">
+<meta property="og:image" content="https://aimadeclear.com/og-image.svg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 선명가 이태준 — 막연한 AI를 선명하게">
+<meta name="twitter:description" content="하이브온 대표 · AI 강사 · 비즈니스 컨설턴트. 막연한 AI를 업무의 판단 기준으로 바꾸는 강의.">
+<meta name="twitter:image" content="https://aimadeclear.com/og-image.svg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="style.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "이태준",
+    "alternateName": "Taejun Lee",
+    "jobTitle": ["AI 강사", "비즈니스 컨설턴트", "하이브온 대표"],
+    "description": "막연한 AI를 선명하게. 공공·기업·대학 출강 AI 강사이자 하이브온(HiveOn) 대표.",
+    "url": "https://aimadeclear.com/",
+    "email": "harry@mentorr.kr",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "HiveOn",
+      "alternateName": "하이브온"
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -23,11 +72,14 @@
       </span>
     </a>
     <div class="nav-right">
-      <button id="theme-toggle" aria-label="다크 모드 전환">
+      <button id="theme-toggle" aria-label="다크 모드 전환" aria-pressed="false">
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
-      <ul>
+      <button id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul id="nav-menu">
       <li><a href="#thesis">강의 철학</a></li>
       <li><a href="#identity">소개</a></li>
       <li><a href="#proof">검증</a></li>
