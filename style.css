@@ -185,7 +185,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 
 /* ---------- 정체성 3 ---------- */
 .identity-head{
-  display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:center;
+  display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start;
 }
 .identity-copy .lead{max-width:620px}
 .profile-frame{
