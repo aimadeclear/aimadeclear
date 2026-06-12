@@ -104,7 +104,13 @@ nav ul a:hover{color:var(--ink)}
 }
 
 /* ---------- hero : 막연함 → 선명함 ---------- */
-header{padding:110px 0 90px;border-bottom:1px solid var(--line);overflow:hidden}
+header{
+  padding:110px 0 90px;border-bottom:1px solid var(--line);overflow:hidden;
+  background:
+    linear-gradient(rgba(7,12,35,.85),rgba(7,12,35,.72)),
+    url("/assets/lecture-1-hero.webp") center right/cover no-repeat;
+  background-attachment:scroll;color:#fff;
+}
 .kicker{
   display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.14em;
   color:var(--accent);text-transform:uppercase;margin-bottom:22px;
@@ -114,19 +120,20 @@ h1{
   letter-spacing:-.035em;line-height:1.18;
 }
 h1 .vague{
-  color:var(--muted);
+  color:rgba(247,249,255,.68);
   filter:blur(5px);opacity:.55;
-  animation:sharpen 2.4s cubic-bezier(.2,.7,.2,1) .5s forwards;
+  animation:hero-sharpen 2.4s cubic-bezier(.2,.7,.2,1) .5s forwards;
   display:inline-block;
 }
 h1 .clear{color:var(--accent)}
+@keyframes hero-sharpen{to{filter:blur(0);opacity:1;color:#fff}}
 @keyframes sharpen{to{filter:blur(0);opacity:1;color:var(--ink)}}
 .hero-sub{
-  margin-top:28px;max-width:620px;font-size:1.08rem;color:var(--muted);
+  margin-top:28px;max-width:620px;font-size:1.08rem;color:rgba(247,249,255,.82);
 }
-.hero-sub strong{color:var(--ink);font-weight:700}
+.hero-sub strong{color:#fff;font-weight:700}
 .hero-en{
-  margin-top:14px;font-size:.92rem;color:var(--muted);letter-spacing:.02em;font-weight:500;
+  margin-top:14px;font-size:.92rem;color:rgba(247,249,255,.76);letter-spacing:.02em;font-weight:500;
 }
 .hero-cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{
@@ -137,6 +144,16 @@ h1 .clear{color:var(--accent)}
 .btn-primary:hover{transform:translateY(-2px)}
 .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+header .btn-ghost{border-color:rgba(247,249,255,.78);color:#fff}
+header .btn-ghost:hover{background:#fff;color:#0e1116}
+@media(max-width:680px){
+  header{
+    background:
+      linear-gradient(rgba(7,12,35,.88),rgba(7,12,35,.78)),
+      url("/assets/lecture-1-hero.webp") 62% center/cover no-repeat;
+    background-attachment:scroll;
+  }
+}
 
 /* ---------- section base ---------- */
 section{padding:88px 0;border-bottom:1px solid var(--line)}
@@ -167,6 +184,14 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 @media(max-width:560px){.thesis{padding:34px 26px}}
 
 /* ---------- 정체성 3 ---------- */
+.profile-frame{
+  margin-top:36px;width:min(100%,360px);aspect-ratio:4/5;
+  border:2px solid var(--accent);border-radius:14px;overflow:hidden;
+  background:var(--surface);box-shadow:0 14px 30px rgba(14,17,22,.08);
+}
+.profile-frame img{
+  display:block;width:100%;height:100%;object-fit:cover;
+}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 @media(max-width:760px){.cards{grid-template-columns:1fr}}
 .card{
@@ -186,10 +211,36 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 }
 .stat .val{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;letter-spacing:-.03em;color:var(--accent)}
 .stat .key{font-size:.88rem;font-weight:600;color:var(--ink);margin-top:6px}
+.stat .context{font-size:.78rem;color:var(--muted);margin-top:8px;line-height:1.5}
 .stat .src{font-size:.76rem;color:var(--muted);margin-top:4px}
+.proof-quotes{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;
+}
+.proof-quote{
+  background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:10px;padding:22px 22px 20px;
+}
+.proof-quote blockquote{
+  border:0;padding:0;font-size:.96rem;line-height:1.7;font-weight:700;color:var(--ink);
+}
+.proof-quote figcaption{margin-top:14px;font-size:.76rem;line-height:1.55;color:var(--muted)}
 .stats-note{margin-top:16px;font-size:.82rem;color:var(--muted)}
+.proof-actions{margin-top:24px}
+@media(max-width:860px){.proof-quotes{grid-template-columns:1fr}}
 
 /* ---------- 트랙 레코드 ---------- */
+#record{
+  background:
+    linear-gradient(rgba(7,12,35,.82),rgba(7,12,35,.78)),
+    url("/assets/lecture-2-record.webp") center right/cover no-repeat;
+  background-attachment:scroll;color:#fff;
+}
+#record h2{color:#fff}
+#record .lead{color:rgba(247,249,255,.84)}
+#record .lead strong{color:#fff}
+#record .org{background:rgba(247,249,255,.1);border-color:rgba(247,249,255,.22);color:#fff}
+#record .record-line{color:rgba(247,249,255,.78)}
+#record .record-line strong{color:#fff}
 .orgs{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px}
 .org{
   padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);
@@ -244,6 +295,7 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 .contact .lead{color:rgba(247,246,242,.7)}
 .contact .btn-ghost{border-color:rgba(247,246,242,.6);color:var(--paper-fixed)}
 .contact .btn-ghost:hover{background:var(--paper-fixed);color:var(--ink-fixed)}
+.response-note{margin-top:18px;font-size:.95rem;font-weight:700;color:#7da3ff}
 .contact-form{
   margin-top:38px;max-width:760px;display:grid;gap:18px;
 }
@@ -272,7 +324,10 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
   box-shadow:0 0 0 3px rgba(125,163,255,.18);
 }
 .contact-form option{color:#0e1116}
-.hidden-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.hidden-field{
+  position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;
+  opacity:0;pointer-events:none;
+}
 .form-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:4px}
 .contact-form button{border:0;cursor:pointer;font-family:inherit}
 @media(max-width:680px){
@@ -283,6 +338,13 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 
 footer{background:var(--ink-fixed);color:rgba(247,246,242,.45);padding:34px 0;font-size:.82rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-social{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.footer-social a{
+  display:inline-flex;align-items:center;gap:6px;color:rgba(247,246,242,.66);
+  text-decoration:none;font-weight:700;transition:color .15s;
+}
+.footer-social a:hover{color:#fff}
+.footer-social svg{width:18px;height:18px;fill:currentColor;flex:0 0 auto}
 
 /* reveal on scroll */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -294,4 +356,5 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
   h1 .vague{filter:none;opacity:1;color:var(--ink)}
+  header h1 .vague{color:#fff}
 }
