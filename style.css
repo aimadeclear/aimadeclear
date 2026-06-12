@@ -6,6 +6,8 @@
   --accent-soft:#e8efff;
   --muted:#5c6470;
   --surface:#fff;
+  --ink-fixed:#0e1116;     /* 테마와 무관하게 항상 어두운 면 */
+  --paper-fixed:#f7f6f2;   /* 위 면 위의 밝은 글자 */
   --maxw:1040px;
   }
   [data-theme="dark"] {
@@ -148,7 +150,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 
 /* ---------- 명제 ---------- */
 .thesis{
-  margin-top:44px;background:var(--ink);color:var(--paper);
+  margin-top:44px;background:var(--ink-fixed);color:var(--paper-fixed);
   border-radius:14px;padding:46px 44px;
 }
 .thesis p.big{font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:700;letter-spacing:-.02em;line-height:1.6}
@@ -210,7 +212,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 .origin{display:grid;grid-template-columns:160px 1fr;gap:44px;align-items:center;margin-top:44px}
 @media(max-width:680px){.origin{grid-template-columns:1fr;gap:24px}}
 .clarity-mark{
-  min-height:140px;border-radius:14px;background:var(--ink);position:relative;
+  min-height:140px;border-radius:14px;background:var(--ink-fixed);position:relative;
   display:flex;align-items:center;justify-content:center;gap:12px;overflow:hidden;
 }
 .clarity-mark::before{
@@ -236,12 +238,12 @@ blockquote{
 blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 
 /* ---------- contact ---------- */
-.contact{background:var(--ink);color:var(--paper);border-bottom:none}
+.contact{background:var(--ink-fixed);color:var(--paper-fixed);border-bottom:none}
 .contact .sec-label{color:#7da3ff}
-.contact h2{color:var(--paper)}
+.contact h2{color:var(--paper-fixed)}
 .contact .lead{color:rgba(247,246,242,.7)}
-.contact .btn-ghost{border-color:rgba(247,246,242,.6);color:var(--paper)}
-.contact .btn-ghost:hover{background:var(--paper);color:var(--ink)}
+.contact .btn-ghost{border-color:rgba(247,246,242,.6);color:var(--paper-fixed)}
+.contact .btn-ghost:hover{background:var(--paper-fixed);color:var(--ink-fixed)}
 .contact-form{
   margin-top:38px;max-width:760px;display:grid;gap:18px;
 }
@@ -255,7 +257,7 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 .contact-form select,
 .contact-form textarea{
   width:100%;border:1px solid rgba(247,246,242,.22);border-radius:8px;
-  background:rgba(247,246,242,.08);color:var(--paper);
+  background:rgba(247,246,242,.08);color:var(--paper-fixed);
   padding:13px 14px;font:inherit;font-size:.95rem;outline:none;
   transition:border-color .15s,background .15s,box-shadow .15s;
 }
@@ -279,7 +281,7 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
   .form-actions .btn{width:100%;text-align:center}
 }
 
-footer{background:var(--ink);color:rgba(247,246,242,.45);padding:34px 0;font-size:.82rem}
+footer{background:var(--ink-fixed);color:rgba(247,246,242,.45);padding:34px 0;font-size:.82rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 /* reveal on scroll */
