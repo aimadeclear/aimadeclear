@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <rect width="1200" height="630" fill="#0e1116"/>
-  <text x="80" y="120" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#4d85ff" letter-spacing="6">TAEJUN LEE — AI, MADE CLEAR</text>
-  <text x="78" y="300" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="92" font-weight="800" fill="#5c6470" letter-spacing="-2">막연한 AI를,</text>
-  <text x="78" y="420" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="92" font-weight="800" fill="#4d85ff" letter-spacing="-2">선명하게.</text>
-  <text x="80" y="540" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="34" font-weight="600" fill="#a0a7b1">하이브온 대표 · AI 강사 · 비즈니스 컨설턴트</text>
-  <rect x="80" y="565" width="180" height="5" rx="2.5" fill="#1e5eff"/>
+  <text x="80" y="120" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#f97316" letter-spacing="6">TAEJUN LEE — AI, MADE CLEAR</text>
+  <text x="78" y="300" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="92" font-weight="800" fill="#6f655c" letter-spacing="-2">막연한 AI를,</text>
+  <text x="78" y="420" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="92" font-weight="800" fill="#f97316" letter-spacing="-2">선명하게.</text>
+  <text x="80" y="540" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="34" font-weight="600" fill="#b1aaa2">하이브온 대표 · AI 강사 · 비즈니스 컨설턴트</text>
+  <rect x="80" y="565" width="180" height="5" rx="2.5" fill="#f97316"/>
 </svg>

@@ -2,9 +2,9 @@
   --ink:#f7f6f2;
   --paper:#0e1116;
   --line:#2a2d32;
-  --accent:#4d85ff;       /* 선명 블루 */
-  --accent-soft:rgba(30,94,255,0.1);
-  --muted:#a0a7b1;
+  --accent:#f97316;       /* 선명 오렌지 */
+  --accent-soft:rgba(249,115,22,0.12);
+  --muted:#b1aaa2;
   --surface:#171a20;
   --ink-fixed:#0e1116;     /* 테마와 무관하게 항상 어두운 면 */
   --paper-fixed:#f7f6f2;   /* 위 면 위의 밝은 글자 */
@@ -85,7 +85,7 @@ nav ul a:hover{color:var(--ink)}
 header{
   padding:110px 0 90px;border-bottom:1px solid var(--line);overflow:hidden;
   background:
-    linear-gradient(rgba(7,12,35,.85),rgba(7,12,35,.72)),
+    linear-gradient(rgba(38,17,7,.84),rgba(38,17,7,.70)),
     url("/assets/lecture-1-hero.webp") center right/cover no-repeat;
   background-attachment:scroll;color:#fff;
 }
@@ -118,7 +118,7 @@ h1 .clear{color:var(--accent)}
   display:inline-block;padding:13px 26px;border-radius:8px;font-weight:700;font-size:.94rem;
   text-decoration:none;transition:transform .15s,box-shadow .15s;
 }
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(30,94,255,.25)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(249,115,22,.28)}
 .btn-primary:hover{transform:translateY(-2px)}
 .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--paper)}
@@ -128,7 +128,7 @@ header .btn-ghost:hover{background:#fff;color:#0e1116}
   header{
     padding:86px 0 72px;
     background:
-      linear-gradient(rgba(7,12,35,.88),rgba(7,12,35,.78)),
+      linear-gradient(rgba(38,17,7,.88),rgba(38,17,7,.78)),
       url("/assets/lecture-1-hero.webp") 62% center/cover no-repeat;
     background-attachment:scroll;
   }
@@ -150,7 +150,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
   border-radius:14px;padding:46px 44px;
 }
 .thesis p.big{font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:700;letter-spacing:-.02em;line-height:1.6}
-.thesis p.big em{font-style:normal;color:#7da3ff}
+.thesis p.big em{font-style:normal;color:#ffb26b}
 .thesis .arrow-row{
   display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap;
 }
@@ -186,10 +186,10 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 .identity-mini-stats span{font-size:.75rem;font-weight:700;color:var(--muted)}
 .profile-frame{
   position:relative;height:100%;min-height:340px;overflow:hidden;
-  border-radius:20px;background:radial-gradient(ellipse at 50% 30%, #2b3247 0%, #161a28 70%);
+  border-radius:20px;background:radial-gradient(ellipse at 50% 30%, #493122 0%, #1f1814 70%);
 }
 .profile-panel-label{
-  position:absolute;left:22px;top:20px;z-index:2;color:#1e5eff;
+  position:absolute;left:22px;top:20px;z-index:2;color:#fb923c;
   font-size:11px;font-weight:800;letter-spacing:.1em;
 }
 .profile-photo-crop{
@@ -252,7 +252,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 /* ---------- 트랙 레코드 ---------- */
 #record{
   background:
-    linear-gradient(rgba(7,12,35,.82),rgba(7,12,35,.78)),
+    linear-gradient(rgba(38,17,7,.82),rgba(38,17,7,.78)),
     url("/assets/lecture-2-record.webp") center right/cover no-repeat;
   background-attachment:scroll;color:#fff;
 }
@@ -266,12 +266,12 @@ h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.025em;l
 }
 .org{
   min-height:86px;padding:16px 14px;border:1px solid rgba(247,249,255,.16);border-radius:10px;
-  background:rgba(10,14,28,.56);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  background:rgba(31,18,10,.58);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
   display:flex;flex-direction:column;justify-content:space-between;gap:12px;color:#fff;
 }
 .org-mark{
   display:flex;align-items:center;justify-content:center;width:44px;height:28px;border-radius:6px;
-  background:rgba(247,249,255,.92);color:#101522;font-size:.76rem;font-weight:900;letter-spacing:.02em;
+  background:rgba(255,247,237,.92);color:#25130a;font-size:.76rem;font-weight:900;letter-spacing:.02em;
 }
 .org span:last-child{
   font-size:.86rem;font-weight:800;letter-spacing:-.02em;line-height:1.35;
@@ -319,12 +319,12 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 
 /* ---------- contact ---------- */
 .contact{background:var(--ink-fixed);color:var(--paper-fixed);border-bottom:none}
-.contact .sec-label{color:#7da3ff}
+.contact .sec-label{color:#ffb26b}
 .contact h2{color:var(--paper-fixed)}
 .contact .lead{color:rgba(247,246,242,.7)}
 .contact .btn-ghost{border-color:rgba(247,246,242,.6);color:var(--paper-fixed)}
 .contact .btn-ghost:hover{background:var(--paper-fixed);color:var(--ink-fixed)}
-.response-note{margin-top:18px;font-size:.95rem;font-weight:700;color:#7da3ff}
+.response-note{margin-top:18px;font-size:.95rem;font-weight:700;color:#ffb26b}
 .contact-form{
   margin-top:38px;max-width:760px;display:grid;gap:18px;
 }
@@ -349,8 +349,8 @@ blockquote em{font-style:normal;color:var(--accent);font-weight:700}
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus{
-  border-color:#7da3ff;background:rgba(247,246,242,.12);
-  box-shadow:0 0 0 3px rgba(125,163,255,.18);
+  border-color:#ffb26b;background:rgba(247,246,242,.12);
+  box-shadow:0 0 0 3px rgba(249,115,22,.22);
 }
 .contact-form option{color:#0e1116}
 .hidden-field{
